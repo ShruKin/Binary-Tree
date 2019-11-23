@@ -56,3 +56,19 @@ void inorder(struct Btree *root)
 		preorder(root->right);
 	}
 }
+
+int height(struct Btree *root)  
+{  
+    if (root == NULL)  
+        return 0;  
+    else
+    {  
+        int lheight = height(root->left);  
+        int rheight = height(root->right);  
+
+        if (lheight > rheight)  
+            return(lheight + 1);  
+        else 
+            return(rheight + 1);  
+    }  
+}  
