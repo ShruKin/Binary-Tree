@@ -27,6 +27,27 @@ struct Btree* create_btree_recur(){
     return root;
 }
 
+void printGivenLevel(struct Btree *root, int level) 
+{ 
+    if (root == NULL) 
+        return; 
+    if (level == 1) 
+        printf("%d ", root->data); 
+    else if (level > 1) 
+    { 
+        printGivenLevel(root->left, level-1); 
+        printGivenLevel(root->right, level-1); 
+    } 
+} 
+
+void printLevelOrder(struct Btree *root) // BFS
+{ 
+    int h = height(root); 
+    int i; 
+    for (i=1; i<=h; i++) 
+        printGivenLevel(root, i); 
+} 
+
 void preorder(struct Btree *root)
 {
 	if(root != NULL)
