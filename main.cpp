@@ -1,4 +1,4 @@
-#include "btree.c"
+#include "visualize.cpp"    //  as it has btree.c already included
 
 int main(int argc, char const *argv[])
 {
