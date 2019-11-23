@@ -95,3 +95,14 @@ void printLevelOrder(struct Btree *root) // BFS
         printf("\n");
     }
 } 
+
+int calc_degree(struct Btree *tree){
+    int deg = 0;
+
+    if(tree->left != NULL)
+        deg++;
+    if(tree->right != NULL)
+        deg++;
+
+    return deg;
+}
