@@ -106,3 +106,13 @@ int calc_degree(struct Btree *tree){
 
     return deg;
 }
+
+int calc_leaf_nodes(struct Btree *root){
+    if(root == NULL)
+        return 0;
+    if(root->left == NULL && root->right == NULL)
+        return 1;
+    else
+        return calc_leaf_nodes(root->left) + calc_leaf_nodes(root->right);
+}
+
