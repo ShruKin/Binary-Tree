@@ -116,3 +116,8 @@ int calc_leaf_nodes(struct Btree *root){
         return calc_leaf_nodes(root->left) + calc_leaf_nodes(root->right);
 }
 
+int calc_internal_nodes(struct Btree *root){
+    if(root == NULL || (root->left == NULL && root->right == NULL))
+        return 0;
+    return 1 + calc_internal_nodes(root->left) + calc_internal_nodes(root->right);
+}
