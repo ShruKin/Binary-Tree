@@ -41,8 +41,8 @@ void postorder(struct Btree *root)
 {
 	if(root != NULL)
 	{
-		preorder(root->left);
-		preorder(root->right);
+		postorder(root->left);
+		postorder(root->right);
 		printf("%d ",root->data);	
 	}
 }
@@ -51,9 +51,9 @@ void inorder(struct Btree *root)
 {
 	if(root != NULL)
 	{
-		preorder(root->left);
+		inorder(root->left);
 		printf("%d ",root->data);	
-		preorder(root->right);
+		inorder(root->right);
 	}
 }
 
